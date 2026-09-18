@@ -152,10 +152,10 @@ return ( <div className="app">
       <div className="hero-card">
 
         <div className="avatar">
-  <img
-    src="/asserts/image.png"
-    alt="Pratiksha Zine"
-  />
+ <img
+  src="/assets/image.png"
+  alt="Pratiksha Zine"
+/>
 </div>
 
         <p>Frontend Developer</p>
@@ -345,7 +345,13 @@ return ( <div className="app">
             <span>Tailwind CSS</span>
             <span>REST API</span>
           </div>
-
+<a  className="btn primary project-btn"
+            href="https://gramin-client.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Project ↗
+          </a>
         </article>
 
         {/* Project 2 */}
@@ -382,7 +388,13 @@ return ( <div className="app">
           <p className="note">
             Add your GitHub repository link here after publishing the project.
           </p>
-
+<a className="btn primary project-btn"
+            href="https://your-crm-project-link.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Project ↗
+          </a>
         </article>
 
 {/* Project 3 */}
@@ -418,7 +430,13 @@ return ( <div className="app">
     <span>React Router</span>
     <span>Cloudflare R2</span>
   </div>
-
+ <a  className="btn primary project-btn"
+    href="https://ur-companion-wqtn.vercel.app/signin"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    View Project ↗
+  </a>
 </article>
 
       </div>
