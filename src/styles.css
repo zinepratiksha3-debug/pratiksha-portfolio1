@@ -53,27 +53,6 @@ border-radius: 50%;
 background: white;
 font: 700 22px "Space Grotesk";
 }
-.project-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.project-card ul {
-  flex-grow: 1;
-}
-
-.project-btn {
-  margin-top: 22px;
-  align-self: flex-start;
-  background: #6658d3;
-  color: white;
-  border-color: #6658d3;
-}
-
-.project-btn:hover {
-  background: #5548bd;
-  border-color: #5548bd;
-}
 
 .logo span {
 color: #6658d3;
@@ -119,9 +98,7 @@ font-family: "Space Grotesk", sans-serif;
 
 /* =========================
 HERO
-
 ========================= */
-
 
 .hero {
 min-height: 680px;
@@ -183,11 +160,6 @@ cursor: pointer;
   background: #172033;
   color: #ffffff;
 }
-
-/* .btn:hover {
-transform: translateY(-3px);
-box-shadow: 0 8px 20px rgba(29, 35, 55, 0.12);
-} */
 
 .actions .primary {
  background-color: black;
@@ -353,8 +325,7 @@ flex-wrap: wrap;
 gap: 10px;
 }
 
-.skills span,
-.tags span {
+.skills span {
 padding: 9px 13px;
 border-radius: 999px;
 background: white;
@@ -364,7 +335,7 @@ font-weight: 600;
 }
 
 /* =========================
-EXPERIENCE
+EXPERIENCE / PROJECT CARD BASE
 ========================= */
 
 .timeline-card,
@@ -381,8 +352,7 @@ justify-content: space-between;
 gap: 20px;
 }
 
-.timeline-top h3,
-.project-card h3 {
+.timeline-top h3 {
 font-size: 25px;
 margin: 0 0 5px;
 }
@@ -398,8 +368,7 @@ color: #7a8291;
 font-weight: 700;
 }
 
-.timeline-card ul,
-.project-card ul {
+.timeline-card ul {
 color: #687286;
 line-height: 1.75;
 padding-left: 20px;
@@ -412,44 +381,128 @@ PROJECTS
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
 }
 
 .project-card {
-position: relative;
-overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(29, 35, 55, 0.12);
+  border-color: #c9c2f7;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6658d3, #a89af0);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
 }
 
 .project-card.featured {
-border-color: #d1cdf5;
+  border-color: #d1cdf5;
+  background: linear-gradient(180deg, #fbfaff 0%, #ffffff 100%);
 }
 
 .project-number {
-font: 700 12px "Space Grotesk";
-color: #6658d3;
-margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #ece9ff;
+  font: 700 13px "Space Grotesk";
+  color: #6658d3;
+  margin-bottom: 20px;
+}
+
+.project-card h3 {
+  font-size: 22px;
+  margin: 0 0 10px;
+  letter-spacing: -0.5px;
 }
 
 .project-card p {
-color: #687286;
-line-height: 1.7;
+  color: #687286;
+  line-height: 1.7;
+  font-size: 15px;
+  margin: 0 0 16px;
+}
+
+.project-card ul {
+  color: #687286;
+  line-height: 1.75;
+  font-size: 14px;
+  padding-left: 20px;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.project-card ul li {
+  margin-bottom: 4px;
 }
 
 .tags {
-display: flex;
-gap: 8px;
-flex-wrap: wrap;
-margin-top: 22px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 22px;
 }
 
 .tags span {
-background: #f7f8fc;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #f7f8fc;
+  border: 1px solid #ebeef5;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b5468;
 }
 
 .note {
-font-size: 12px;
-margin-top: 22px;
-color: #8a91a0 !important;
+  font-size: 12px;
+  margin-top: 18px;
+  color: #8a91a0 !important;
+}
+
+.project-btn {
+  margin-top: 22px;
+  align-self: flex-start;
+  background: #6658d3;
+  color: white;
+  border-color: #6658d3;
+  border-radius: 10px;
+  padding: 11px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.project-btn:hover {
+  background: #5548bd;
+  border-color: #5548bd;
+  transform: translateX(2px);
 }
 
 /* =========================
